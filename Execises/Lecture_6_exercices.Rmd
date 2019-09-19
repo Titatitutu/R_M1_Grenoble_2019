@@ -412,7 +412,8 @@ et avec un plot on obtient la réponse:
 ```{r}
 ttest_gap %>% 
   ggplot(aes(x = year, y = p.value, color = continent))+
-  geom_point()
+  geom_point()+
+  facet_grid(continent~.)
 ```
 
 réponse: pour l'Afrique , l'espérance de vie à la naissance n'a jamais été supérieure à 60 (les valeurs p sont toujours 1, ce qui indique qu'on ne peut pas rejeter l'hypothèse que la moyenne est inférieure à 60); pour Europe et Océanie, la moyenne a toujours été supérieure; pour Amérique et Asie, la transtition par 60 s'est effectuée pendant la periode d'observation.
